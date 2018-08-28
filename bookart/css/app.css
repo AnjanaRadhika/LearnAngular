@@ -22,21 +22,62 @@
   margin-top: 15px;
 }
 
-#booklist-wrapper {
+#booklist-wrapper, #kartlist-wrapper {
   width: 100%;
   padding: 10px;
 }
 
-#booklist-wrapper input {
+#booklist-wrapper input, #kartlist-wrapper input {
   width: 25%;
 }
 
-#booklist-wrapper .book {
+#booklist-wrapper .book, #kartlist-wrapper .book {
   border: 1px solid gray;
   padding: 10px;
   margin-bottom: 10px;
+  position: relative;
 }
 
-#booklist-wrapper .book .book-details {
+#booklist-wrapper .book .book-details, #kartlist-wrapper .book .book-details {
   margin-left: 160px;
+}
+
+.container.ng-enter {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+.container.ng-enter-active {
+  opacity:1;
+}
+
+.book.ng-enter {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:0;
+  left: 600px;
+}
+
+.book.ng-enter-active {
+  opacity:1;
+  left: 0;
+}
+
+.book.ng-leave {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:1;
+  left: 0;
+}
+
+.book.ng-leave-active {
+  opacity:0;
+  left: 600px;
 }

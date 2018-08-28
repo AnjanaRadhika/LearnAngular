@@ -1,22 +1,23 @@
-<div id="booklist-wrapper" ng-controller="BookListCtrl">
+<div id="booklist-wrapper">
   <form role="form">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search here..." />
+      <input type="text" class="form-control" placeholder="Search here..."
+        ng-model="searchStr"/>
     </div>
   </form>
   <ul class="list-unstyled">
-    <li class="book" style="background: white url(img/{{book.imgUrl}}) 10px 20px/90px 150px no-repeat" ng-repeat="book in books">
+    <li class="book" style="background: white url(img/{{book.imgUrl}}) 10px 20px/90px 150px no-repeat" ng-repeat="book in books| filter:searchStr">
       <div class="book-details clearfix">
         <h3>{{book.name}}</h3>
         <p>
-          {{book.price}}
+          {{book.price|currency: "$ "}}
         </p>
         <ul class="list-unstyled list-inline">
           <li>
             Rating: {{book.rating}}
           </li>
           <li>
-            Binding: {{book.binding}}
+            Binding: {{book.binding | uppercase}}
           </li>
           <li>
             Publisher: {{book.publisher}}
